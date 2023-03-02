@@ -2,13 +2,14 @@
 
 #include <iostream>
 
-
-int main()
+class Chip8
 {
+public:
     // Register is a dedicated location on a cpu for storage. Any operation that a CPU does must be done within its registers.
     // Operations involve loading data from memory into registers, operating on those registers, and then storing the result back into memory.
     // Chip 8 has 16 8-bit registers, labeled V0 to VF (hex) Register VF is a bit special. It’s used as a flag to hold information about the result of operations. 
     // Each register is able to hold any value from 0x00 to 0xFF.
+    uint8_t registers[16]{};
 
     // Chip-8 has 4096 bytes of memory, address space is from 0x000 to 0xFFF
     // 0x000-0x1FF originally reserved for the chip 8 interpreter, but this emulator will never write or read from this area
@@ -34,7 +35,18 @@ int main()
     // We only need 8 bits for our stack pointer because the stack will be represented as an array, so the SP can just be an index into that array. We only need sixteen indices then, which a single byte can manage
     // When we pop a value off the stack, we won’t actually delete it from the array but instead just copy the value and decrement the SP so it “points” to the previous value.
 
-    // 8-bit delay timer 
+    // 8-bit delay timer is a simple timer used for timing, if the timer value is zero it stays zero, if it's loaded with a value it will decrement at a rate of 60hz
+
+    // 8-bit sound timer it will decrement at 60hz if non zero, but a single tone will buzz when it's non-zero
+
+    //16 input keys, ill take input mapping from website
+
+    //64x32 monochrome display memory, memory buffer used for storing the graphics to display, each pixel is either on or off so only two colors can be represented
+};
+
+int main()
+{
+}
 
 
 
