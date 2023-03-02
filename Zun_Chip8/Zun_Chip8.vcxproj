@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Zun_Chip8.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chip8.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
